@@ -1,73 +1,72 @@
 body {
-    font-family: 'Comic Sans MS', cursive, 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background-color: #66ff66; /* Green background */
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 100vh;
-    margin: 0;
-  }
-  
-  .container {
-    text-align: center;
-  }
-  
-  h1 {
-    font-weight: bold; /* Make the font bold */
-  }
-  
-  #board {
-    display: grid;
-    grid-template-columns: repeat(3, 120px); /* Increased cell size */
-    gap: 10px;
-  }
-  
-  .cell {
-    width: 120px; /* Increased cell size */
-    height: 120px; /* Increased cell size */
-    text-align: center;
-    font-size: 2.5em; /* Increased font size */
-    line-height: 120px; /* Set line-height to match the cell height */
-    border: 2px solid #333;
-    cursor: pointer;
-    color: #333; /* Default color for X and O */
-  }
-  
-  .cell.X {
-    color: orange; /* Color for X */
-  }
-  
-  .cell.O {
-    color: blue; /* Color for O */
-  }
-  
-  .popup {
-    display: none;
-    position: fixed;
-    bottom: 0;
-    left: 50%;
-    transform: translateX(-50%);
-    padding: 20px;
-    background-color: white;
-    border: 2px solid #333;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    text-align: center;
-    font-family: 'Arial', sans-serif; /* Change the font for the popup message */
-  }
-  
-  .popup p {
-    margin: 0;
-    font-size: 1.2em;
-    display: inline-block; /* Display the message and button inline */
-  }
-  
-  #restart-button {
-    margin-top: 10px;
-    padding: 10px;
-    background-color: #4CAF50;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-  }
-  
+  font-family: 'Comic Sans MS', cursive, 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #66ff66; /* Green background */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  margin: 0;
+}
+
+.container {
+  text-align: center;
+}
+
+h1 {
+  font-weight: bold; /* Make the font bold */
+}
+
+#board {
+  display: grid;
+  grid-template-columns: repeat(3, 120px); /* Increased cell size */
+  gap: 10px;
+}
+
+.cell {
+  width: 120px; /* Increased cell size */
+  height: 120px; /* Increased cell size */
+  text-align: center;
+  font-size: 2.5em; /* Increased font size */
+  line-height: 120px; /* Set line-height to match the cell height */
+  border: 2px solid #333;
+  cursor: pointer;
+  color: #333; /* Default color for X and O */
+}
+
+.cell.X {
+  color: orange; /* Color for X */
+}
+
+.cell.O {
+  color: blue; /* Color for O */
+}
+
+.popup {
+  display: none;
+  position: fixed;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 20px;
+  background-color: white;
+  border: 2px solid #333;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  font-family: 'Arial', sans-serif; /* Change the font for the popup message */
+}
+
+.popup p {
+  margin: 0;
+  font-size: 1.2em;
+  display: inline-block; /* Display the message and button inline */
+}
+
+#restart-button {
+  margin-top: 10px;
+  padding: 10px;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}

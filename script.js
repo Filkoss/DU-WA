@@ -4,76 +4,74 @@ let gameBoard = ['', '', '', '', '', '', '', '', ''];
 let gameActive = true;
 
 function renderBoard() {
-  board.innerHTML = '';
-  gameBoard.forEach((cell, index) => {
-    const cellElement = document.createElement('div');
-    cellElement.classList.add('cell');
-    cellElement.textContent = cell;
-    cellElement.addEventListener('click', () => cellClick(index));
-    if (cell === 'X') {
-      cellElement.classList.add('X'); // Add X class for styling
-    } else if (cell === 'O') {
-      cellElement.classList.add('O'); // Add O class for styling
-    }
-    board.appendChild(cellElement);
-  });
+    board.innerHTML = '';
+    gameBoard.forEach((cell, index) => {
+        const cellElement = document.createElement('div');
+        cellElement.classList.add('cell');
+        cellElement.textContent = cell;
+        cellElement.addEventListener('click', () => cellClick(index));
+        if (cell === 'X') {
+            cellElement.classList.add('X');
+        } else if (cell === 'O') {
+            cellElement.classList.add('O');
+        }
+        board.appendChild(cellElement);
+    });
 }
 
 function cellClick(index) {
-  if (!gameActive || gameBoard[index] !== '') return;
+    if (!gameActive || gameBoard[index] !== '') return;
 
-  gameBoard[index] = currentPlayer;
-  renderBoard();
+    gameBoard[index] = currentPlayer;
+    renderBoard();
 
-  if (checkWinner()) {
-    renderBoard(); // Render the final winning board
-
-    const message = currentPlayer === 'X' ? 'Player X wins!' : 'Player O wins!';
-    showPopup(message);
-
-    gameActive = false;
-  } else if (gameBoard.every(cell => cell !== '')) {
-    showPopup("It's a tie!");
-    gameActive = false;
-  } else {
-    currentPlayer = currentPlayer === 'X' ? 'O' : 'X';
-  }
+    if (checkWinner()) {
+        renderBoard();
+        const message = currentPlayer === 'X' ? 'Player X wins!' : 'Player O wins!';
+        showPopup(message);
+        gameActive = false;
+    } else if (gameBoard.every(cell => cell !== '')) {
+        showPopup("It's a tie!");
+        gameActive = false;
+    } else {
+        currentPlayer = currentPlayer === 'X' ? 'O' : 'X';
+    }
 }
 
 function checkWinner() {
-  const winPatterns = [
-    [0, 1, 2], [3, 4, 5], [6, 7, 8], // Rows
-    [0, 3, 6], [1, 4, 7], [2, 5, 8], // Columns
-    [0, 4, 8], [2, 4, 6]             // Diagonals
-  ];
+    const winPatterns = [
+        [0, 1, 2], [3, 4, 5], [6, 7, 8], // Rows
+        [0, 3, 6], [1, 4, 7], [2, 5, 8], // Columns
+        [0, 4, 8], [2, 4, 6]             // Diagonals
+    ];
 
-  return winPatterns.some(pattern => {
-    const [a, b, c] = pattern;
-    return gameBoard[a] !== '' && gameBoard[a] === gameBoard[b] && gameBoard[b] === gameBoard[c];
-  });
+    return winPatterns.some(pattern => {
+        const [a, b, c] = pattern;
+        return gameBoard[a] !== '' && gameBoard[a] === gameBoard[b] && gameBoard[b] === gameBoard[c];
+    });
 }
 
 function showPopup(message) {
-  const popup = document.getElementById('popup');
-  const popupMessage = document.getElementById('popup-message');
-  const restartButton = document.getElementById('restart-button');
+    const popup = document.getElementById('popup');
+    const popupMessage = document.getElementById('popup-message');
+    const restartButton = document.getElementById('restart-button');
 
-  popupMessage.textContent = message;
-  restartButton.style.display = 'block'; // Always show restart button when the popup is displayed
-  popup.style.display = 'block';
+    popupMessage.textContent = message;
+    restartButton.style.display = 'block';
+    popup.style.display = 'block';
 }
 
 function hidePopup() {
-  const popup = document.getElementById('popup');
-  popup.style.display = 'none';
+    const popup = document.getElementById('popup');
+    popup.style.display = 'none';
 }
 
 function restartGame() {
-  hidePopup();
-  currentPlayer = 'X';
-  gameBoard = ['', '', '', '', '', '', '', '', ''];
-  gameActive = true;
-  renderBoard();
+    hidePopup();
+    currentPlayer = 'X';
+    gameBoard = ['', '', '', '', '', '', '', '', ''];
+    gameActive = true;
+    renderBoard();
 }
 
 renderBoard();
