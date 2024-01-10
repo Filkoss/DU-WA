@@ -2,6 +2,7 @@ body {
   font-family: 'Comic Sans MS', cursive, 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   background-color: #66ff66; /* Green background */
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
   height: 100vh;
@@ -10,10 +11,55 @@ body {
 
 .container {
   text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Center content horizontally */
+  justify-content: center; /* Center content vertically */
+  height: 100%; /* Set height to 100% for full-page height */
 }
 
 h1 {
   font-weight: bold; /* Make the font bold */
+  margin-top: 20px; /* Add margin at the top */
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  background-color: orange; /* Orange background for the header */
+  padding: 10px; /* Add padding for better appearance */
+  position: fixed;
+  top: 0;
+  z-index: 1000; /* Set z-index to ensure the header stays on top */
+}
+
+.header a.logo {
+  color: white;
+  font-size: 24px;
+  text-decoration: none;
+}
+
+.header a.logo i {
+  font-size: 24px;
+  margin-right: 5px;
+}
+
+.header a.logo:hover {
+  text-decoration: underline;
+}
+
+.navbar {
+  display: flex;
+}
+
+.navbar a {
+  margin: 0 15px; /* Add margin between navbar links */
+  text-decoration: none;
+  color: rgb(0, 0, 0);
+  font-weight: bold;
+  font-size: 18px; /* Increase font size for better visibility */
 }
 
 #board {
