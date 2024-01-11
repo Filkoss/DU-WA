@@ -39,6 +39,7 @@ function replayGame() {
     window.location.reload();
 }
 
+
 function componentToHex(c) {
     var hex = c.toString(16).toUpperCase();
     return hex.length == 1 ? "0" + hex : hex;

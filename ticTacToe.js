@@ -73,5 +73,4 @@ function restartGame() {
     gameActive = true;
     renderBoard();
 }
-
 renderBoard();
