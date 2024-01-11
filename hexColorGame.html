@@ -1,25 +1,33 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Hex Color Guessing Game</title>
-  <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Game Hub</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-  <header>
-    <a href="#" class="logo">  <i class="Menu"></i></a>
-    <nav class="navbar">
-      <a href="index.html"></a>
-    </nav>
-  </header>
+    <header class="header">
+        <a href="#" class="logo">  <i class="Menu"></i></a>
+        </nav>
+        <a href="index.html" class="homeButton">Home</a>
+    </header>
 
-  <div class="container">
-    <h1>Hex Color Guessing Game</h1>
-    <p>Insert the Hex Color Guessing Game code here...</p>
-  </div>
+    <div id="colorGame">
+        <h1>Guess the color</h1>
+        <p id="colorCode">#FFFFFF</p>
+        <div id="colorButtons">
+            <button class="colorButton" id="button0" onclick="makeGuess()"></button>
+            <button class="colorButton" id="button1" onclick="makeGuess()"></button>
+            <button class="colorButton" id="button2" onclick="makeGuess()"></button>
+        </div>
+        <div id="replaySection">
+            <button id="replayButton" onclick="replayGame()">Replay</button>
+        </div>
+    </div>
 
-  <script src="hexGame.js"></script>
+    <script src="hexGame.js"></script>
+    
 </body>
 </html>

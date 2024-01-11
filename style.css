@@ -1,6 +1,6 @@
 body {
   font-family: 'Comic Sans MS', cursive, 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background-color: #66ff66; /* Green background */
+  background-color: #66ff66;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -9,30 +9,55 @@ body {
   margin: 0;
 }
 
-.container {
+header {
   text-align: center;
-  display: flex;
-  flex-direction: column;
-  align-items: center; /* Center content horizontally */
-  justify-content: center; /* Center content vertically */
-  height: 100%; /* Set height to 100% for full-page height */
+  font-size: large;
+  font-weight: bolder;
 }
 
-h1 {
-  font-weight: bold; /* Make the font bold */
-  margin-top: 20px; /* Add margin at the top */
+#colorCode {
+  text-align: center;
+  font-size: xxx-large;
+  margin-top: 60px;
 }
 
-.header {
+#colorButtons {
   display: flex;
-  justify-content: space-between;
-  align-items: center;
-  width: 100%;
-  background-color: orange; /* Orange background for the header */
-  padding: 10px; /* Add padding for better appearance */
-  position: fixed;
-  top: 0;
-  z-index: 1000; /* Set z-index to ensure the header stays on top */
+  justify-content: space-around;
+  margin-top: 80px;
+}
+
+.colorButton {
+  height: 170px;
+  width: 170px;
+  border-radius: 50%;
+  cursor: pointer;
+  border-style: solid;
+  border-width: 2px;
+  border-color: rgb(0, 0, 0);
+  margin-right: 15px;
+  display: inline-block;
+}
+
+#replaySection {
+  text-align: center;
+  margin-top: 20px;
+}
+
+#replayButton {
+  height: 60px;
+  width: 120px;
+  font-size: larger;
+  text-align: center;
+  cursor: pointer;
+  background-color: #715965;
+}
+
+h1{
+  text-align: center;
+  font-size: xxx-large;
+  font-weight: bolder;
+  font-family: cursive;
 }
 
 .header a.logo {
@@ -51,40 +76,43 @@ h1 {
 }
 
 .navbar {
+  text-align: top;
   display: flex;
+  
+  
 }
 
 .navbar a {
-  margin: 0 15px; /* Add margin between navbar links */
+  margin: 0 15px;
   text-decoration: none;
   color: rgb(0, 0, 0);
   font-weight: bold;
-  font-size: 18px; /* Increase font size for better visibility */
+  font-size: 18px;
 }
 
 #board {
   display: grid;
-  grid-template-columns: repeat(3, 120px); /* Increased cell size */
+  grid-template-columns: repeat(3, 120px);
   gap: 10px;
 }
 
 .cell {
-  width: 120px; /* Increased cell size */
-  height: 120px; /* Increased cell size */
+  width: 120px;
+  height: 120px;
   text-align: center;
-  font-size: 2.5em; /* Increased font size */
-  line-height: 120px; /* Set line-height to match the cell height */
+  font-size: 2.5em;
+  line-height: 120px;
   border: 2px solid #333;
   cursor: pointer;
-  color: #333; /* Default color for X and O */
+  color: #333;
 }
 
 .cell.X {
-  color: orange; /* Color for X */
+  color: orange;
 }
 
 .cell.O {
-  color: blue; /* Color for O */
+  color: blue;
 }
 
 .popup {
@@ -98,13 +126,13 @@ h1 {
   border: 2px solid #333;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   text-align: center;
-  font-family: 'Arial', sans-serif; /* Change the font for the popup message */
+  font-family: 'Arial', sans-serif;
 }
 
 .popup p {
   margin: 0;
   font-size: 1.2em;
-  display: inline-block; /* Display the message and button inline */
+  display: inline-block;
 }
 
 #restart-button {
